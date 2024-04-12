@@ -83,7 +83,7 @@ resource "aws_subnet" "pri_sub_2a" {
 
 resource "aws_subnet" "pri_sub_2b" {
     vpc_id = aws_vpc.vpc.id
-    cidr_block = var.pub_sub_2b
+    cidr_block = var.pri_sub_2b
     availability_zone = data.aws_availability_zones.availability_zones.names[1]
     map_public_ip_on_launch = true
 
