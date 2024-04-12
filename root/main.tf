@@ -20,3 +20,14 @@ module "sg" {
   vpc_id = module.vpc.vpc_id
   my_ip  = var.my_ip
 }
+
+# Creating NAT Gateway
+module "nat_gateway" {
+  source                     = "../modules/nat-gateway"
+  public_subnet_2a_id       = module.vpc.public_subnet_2a_id
+  internet_gateway           = module.vpc.internet_gateway
+  public_subnet_2b_id       = module.vpc.public_subnet_2b_id
+  vpc_id                     = module.vpc.vpc_id
+  private_subnet_2a_id = module.vpc.private_subnet_2a_id
+  private_subnet_2b_id = module.vpc.private_subnet_2b_id
+}
