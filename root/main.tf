@@ -31,3 +31,15 @@ module "nat_gateway" {
   private_subnet_2a_id = module.vpc.private_subnet_2a_id
   private_subnet_2b_id = module.vpc.private_subnet_2b_id
 }
+
+module "auto-sg" {
+  source                   = "../modules/auto-sg"
+  project_name = module.vpc.project_name
+  private_subnet_2a_id = module.vpc.private_subnet_2a_id
+  private_subnet_2b_id = module.vpc.private_subnet_2b_id
+  public_subnet_2a_id = module.vpc.public_subnet_2a_id
+  public_subnet_2b_id = module.vpc.public_subnet_2b_id
+  private_instance_security_group_id = module.sg.private_instance_security_group_id
+  public_instance_security_group_id = module.sg.public_instance_security_group_id
+
+}
