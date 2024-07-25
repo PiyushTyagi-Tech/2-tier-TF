@@ -34,3 +34,9 @@ override.tf.json
 terraform.rc
 *.pem
 *.pub
+## Ignoring app files.
+/.idea
+*/pycache/*
+/venv/
+/app/__pycache__/
+/.env

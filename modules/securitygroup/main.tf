@@ -13,7 +13,7 @@ resource "aws_security_group" "public_instance_security_group" {
   }
 
   ingress {
-    description      = "http access"
+    description      = "http access" 
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
